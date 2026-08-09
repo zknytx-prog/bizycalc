@@ -1,58 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freelance Rate Calculator - Find Your Ideal Hourly Rate | BizyCalc</title>
-<meta name="description" content="Calculate your ideal freelance hourly rate based on desired income, expenses, billable hours, and taxes. Free, instant, no signup.">
-<link rel="stylesheet" href="style.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" async></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freelance Rate Calculator | BizyCalc</title>
+<meta content="Calculate your ideal freelance hourly rate based on desired income, expenses, billable hours, and taxes. Free, instant, no signup." name="description"/><link href="https://bizycalc.com/freelance-rate-calculator.html" rel="canonical"/><link href="/favicon.png" rel="icon" type="image/png"/><meta content="Freelance Rate Calculator | BizyCalc" property="og:title"/><meta content="Calculate your ideal freelance hourly rate based on desired income, expenses, billable hours, and taxes. Free, instant, no signup." property="og:description"/><meta content="website" property="og:type"/><meta content="https://bizycalc.com/freelance-rate-calculator.html" property="og:url"/><meta content="https://bizycalc.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Freelance Rate Calculator | BizyCalc" name="twitter:title"/><meta content="Calculate your ideal freelance hourly rate based on desired income, expenses, billable hours, and taxes. Free, instant, no signup." name="twitter:description"/><meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
 </head>
 <body>
 <header>
-  <a href="/" class="logo">Bizy<span>Calc</span></a>
-  <nav><a href="/">All Tools</a></nav>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
 </header>
-
 <div class="container">
-  <div class="hero" style="padding-top:0;">
-    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
-    <h1>Freelance Rate Calculator</h1>
-    <p>Figure out exactly what to charge per hour to hit your income goals.</p>
-  </div>
-
-  <div class="tool-box">
-    <label>Desired Annual Income ($)</label>
-    <input type="number" id="income" placeholder="80000">
-
-    <label>Annual Business Expenses ($)</label>
-    <input type="number" id="expenses" placeholder="8000">
-
-    <label>Billable Hours Per Week</label>
-    <input type="number" id="hours" placeholder="25">
-
-    <label>Weeks Worked Per Year</label>
-    <input type="number" id="weeks" placeholder="48">
-
-    <label>Estimated Tax Rate (%)</label>
-    <input type="number" id="taxRate" placeholder="25">
-
-    <button class="calc-btn" onclick="calcRate()">Calculate My Rate</button>
-
-    <div class="result" id="result">
-      <div class="result-row"><span>Total Revenue Needed</span><strong id="rRevenue">$0</strong></div>
-      <div class="result-row"><span>Total Billable Hours / Year</span><strong id="rHours">0</strong></div>
-      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
-        <span><strong>Your Hourly Rate</strong></span><strong id="rRate">$0</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="explain">
-    <h2>How this calculator works</h2>
-    <p>We start with your desired take-home income, add your business expenses, then gross it up for taxes. That total is divided by your realistic annual billable hours (weekly billable hours × weeks worked) to get your break-even-plus-profit hourly rate.</p>
-  </div>
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Freelance Rate Calculator</h1>
+<p>Figure out exactly what to charge per hour to hit your income goals.</p>
+</div>
+<div class="tool-box">
+<label>Desired Annual Income ($)</label>
+<input id="income" placeholder="80000" type="number"/>
+<label>Annual Business Expenses ($)</label>
+<input id="expenses" placeholder="8000" type="number"/>
+<label>Billable Hours Per Week</label>
+<input id="hours" placeholder="25" type="number"/>
+<label>Weeks Worked Per Year</label>
+<input id="weeks" placeholder="48" type="number"/>
+<label>Estimated Tax Rate (%)</label>
+<input id="taxRate" placeholder="25" type="number"/>
+<button class="calc-btn" onclick="calcRate()">Calculate My Rate</button>
+<div class="result" id="result">
+<div class="result-row"><span>Total Revenue Needed</span><strong id="rRevenue">$0</strong></div>
+<div class="result-row"><span>Total Billable Hours / Year</span><strong id="rHours">0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+<span><strong>Your Hourly Rate</strong></span><strong id="rRate">$0</strong>
+</div>
+</div>
+</div>
+<div class="explain">
+<h2>How this calculator works</h2>
+<p>We start with your desired take-home income, add your business expenses, then gross it up for taxes. That total is divided by your realistic annual billable hours (weekly billable hours × weeks worked) to get your break-even-plus-profit hourly rate.</p>
+</div>
 <div class="explain">
 <h2>Why "billable hours" is the number that matters</h2>
 <p>Most new freelancers price off a 40-hour week, but only a fraction of those hours are actually billable — the rest goes to admin, proposals, marketing, and finding clients. Underestimating this is the single biggest reason freelancers underprice their work.</p>
@@ -72,14 +64,11 @@
 <p><strong>How often should I raise my rate?</strong> Common practice is reviewing rates annually, or any time your skills, demand, or cost of living materially shifts. If you're consistently fully booked, that's a signal you're underpriced.</p>
 </div>
 </div>
-
-<div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="2665011148" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/invoice-generator.html">Invoice Generator</a> · <a href="/employee-cost-calculator.html">Employee Cost Calculator</a> · <a href="/markup-calculator.html">Markup Calculator</a></p></div><div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
-<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
-
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
 <script>
 function calcRate(){
   const income = parseFloat(document.getElementById('income').value) || 0;

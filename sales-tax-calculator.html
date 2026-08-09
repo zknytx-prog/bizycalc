@@ -1,55 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sales Tax Calculator - Add or Remove Sales Tax | BizyCalc</title>
-<meta name="description" content="Free sales tax calculator. Enter a price and tax rate to instantly get the tax amount and total, or reverse-calculate the pre-tax price.">
-<link rel="stylesheet" href="style.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" async></script>
+<meta content="Free sales tax calculator. Enter a price and tax rate to instantly get the tax amount and total, or reverse-calculate the pre-tax price." name="description"/><link href="https://bizycalc.com/sales-tax-calculator.html" rel="canonical"/><link href="/favicon.png" rel="icon" type="image/png"/><meta content="Sales Tax Calculator - Add or Remove Sales Tax | BizyCalc" property="og:title"/><meta content="Free sales tax calculator. Enter a price and tax rate to instantly get the tax amount and total, or reverse-calculate the pre-tax price." property="og:description"/><meta content="website" property="og:type"/><meta content="https://bizycalc.com/sales-tax-calculator.html" property="og:url"/><meta content="https://bizycalc.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Sales Tax Calculator - Add or Remove Sales Tax | BizyCalc" name="twitter:title"/><meta content="Free sales tax calculator. Enter a price and tax rate to instantly get the tax amount and total, or reverse-calculate the pre-tax price." name="twitter:description"/><meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
 </head>
 <body>
 <header>
-  <a href="/" class="logo">Bizy<span>Calc</span></a>
-  <nav><a href="/">All Tools</a></nav>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
 </header>
-
 <div class="container">
-  <div class="hero" style="padding-top:0;">
-    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
-    <h1>Sales Tax Calculator</h1>
-    <p>Add tax to a price, or work backward from a total to find the pre-tax price.</p>
-  </div>
-
-  <div class="tool-box">
-    <label>Price ($)</label>
-    <input type="number" id="price" placeholder="100">
-
-    <label>Sales Tax Rate (%)</label>
-    <input type="number" id="taxRate" placeholder="8.25">
-
-    <label>Calculation Type</label>
-    <select id="mode">
-      <option value="add">Add tax to price (price is pre-tax)</option>
-      <option value="remove">Remove tax from total (price is post-tax)</option>
-    </select>
-
-    <button class="calc-btn" onclick="calcTax()">Calculate</button>
-
-    <div class="result" id="result">
-      <div class="result-row"><span>Pre-Tax Price</span><strong id="rPre">$0</strong></div>
-      <div class="result-row"><span>Tax Amount</span><strong id="rTax">$0</strong></div>
-      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
-        <span><strong>Total Price</strong></span><strong id="rTotal">$0</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="explain">
-    <h2>How this calculator works</h2>
-    <p>Adding tax: total = price × (1 + tax rate). Removing tax: pre-tax price = total ÷ (1 + tax rate). Useful for pricing products, checking receipts, or reconciling invoices across states with different sales tax rates.</p>
-  </div>
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Sales Tax Calculator</h1>
+<p>Add tax to a price, or work backward from a total to find the pre-tax price.</p>
+</div>
+<div class="tool-box">
+<label>Price ($)</label>
+<input id="price" placeholder="100" type="number"/>
+<label>Sales Tax Rate (%)</label>
+<input id="taxRate" placeholder="8.25" type="number"/>
+<label>Calculation Type</label>
+<select id="mode">
+<option value="add">Add tax to price (price is pre-tax)</option>
+<option value="remove">Remove tax from total (price is post-tax)</option>
+</select>
+<button class="calc-btn" onclick="calcTax()">Calculate</button>
+<div class="result" id="result">
+<div class="result-row"><span>Pre-Tax Price</span><strong id="rPre">$0</strong></div>
+<div class="result-row"><span>Tax Amount</span><strong id="rTax">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+<span><strong>Total Price</strong></span><strong id="rTotal">$0</strong>
+</div>
+</div>
+</div>
+<div class="explain">
+<h2>How this calculator works</h2>
+<p>Adding tax: total = price × (1 + tax rate). Removing tax: pre-tax price = total ÷ (1 + tax rate). Useful for pricing products, checking receipts, or reconciling invoices across states with different sales tax rates.</p>
+</div>
 <div class="explain">
 <h2>Sales tax nexus — why it matters if you sell online</h2>
 <p>If your business has "nexus" in a state — a physical presence, employees, or enough sales volume — you may be required to collect and remit sales tax there, even if you're not physically located in that state. Rules vary significantly by state.</p>
@@ -69,14 +63,11 @@
 <p><strong>What if I sell in multiple states?</strong> You may need to register, collect, and remit sales tax separately in each state where you have nexus. This can get complex fast — many multi-state sellers use dedicated sales tax software once volume grows.</p>
 </div>
 </div>
-
-<div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="2665011148" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/invoice-generator.html">Invoice Generator</a> · <a href="/markup-calculator.html">Markup Calculator</a> · <a href="/profit-margin-calculator.html">Profit Margin Calculator</a></p></div><div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
-<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
-
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
 <script>
 function calcTax(){
   const price = parseFloat(document.getElementById('price').value) || 0;
