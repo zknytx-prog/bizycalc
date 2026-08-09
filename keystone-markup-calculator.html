@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keystone Pricing & Retail Markup Calculator | BizyCalc</title>
+<meta name="description" content="Free keystone pricing calculator. See your retail price using the classic 2x wholesale markup, or any custom multiplier, plus the resulting margin.">
+<link rel="canonical" href="https://bizycalc.com/keystone-markup-calculator.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:title" content="Keystone Pricing & Retail Markup Calculator | BizyCalc">
+<meta property="og:description" content="Free keystone pricing calculator. See your retail price using the classic 2x wholesale markup, or any custom multiplier, plus the resulting margin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bizycalc.com/keystone-markup-calculator.html">
+<meta property="og:image" content="https://bizycalc.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keystone Pricing & Retail Markup Calculator | BizyCalc">
+<meta name="twitter:description" content="Free keystone pricing calculator. See your retail price using the classic 2x wholesale markup, or any custom multiplier, plus the resulting margin.">
+<meta name="twitter:image" content="https://bizycalc.com/og-image.png">
+<link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" async></script>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">Bizy<span>Calc</span></a>
+  <nav><a href="/">All Tools</a></nav>
+</header>
+
+<div class="container">
+  <div class="hero" style="padding-top:0;">
+    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+    <h1>Keystone Pricing &amp; Retail Markup Calculator</h1>
+    <p>Apply keystone pricing (2x wholesale cost) or any custom multiplier to find your retail price and margin.</p>
+  </div>
+
+  <div class="tool-box">
+    <label>Wholesale Cost ($)</label>
+    <input type="number" id="wholesaleCost" placeholder="10.00" value="10.00">
+    <label>Markup Multiplier</label>
+    <select id="multiplier">
+      <option value="2">Keystone (2.0x)</option>
+      <option value="2.5">2.5x</option>
+      <option value="3">3.0x (Triple Keystone)</option>
+      <option value="custom">Custom</option>
+    </select>
+    <div id="customWrap" style="display:none;">
+      <label>Custom Multiplier</label>
+      <input type="number" id="customMultiplier" placeholder="2.2" value="2.2">
+    </div>
+    <button class="calc-btn" onclick="calcKeystone()">Calculate Retail Price</button>
+    <div class="result" id="result">
+      <div class="result-row"><span>Retail Price</span><strong id="rRetail">$0</strong></div>
+      <div class="result-row"><span>Profit per Unit</span><strong id="rProfit">$0</strong></div>
+      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>Margin</strong></span><strong id="rMargin">0%</strong></div>
+    </div>
+  </div>
+
+<div class="explain"><h2>How this calculator works</h2><p>Keystone pricing is a classic retail rule of thumb: double your wholesale cost to set the retail price (a 2.0x multiplier). This calculator applies that — or any custom multiplier — to your wholesale cost to find your retail price, profit, and resulting margin.</p></div>
+<div class="explain"><h2>Keystone isn't always enough</h2><p>A straight 2x keystone markup gives a 50% margin, which works for many retail categories but can be too thin once you factor in returns, shrinkage, marketing, and overhead — some retailers use 2.5x-3x ('triple keystone') for categories with higher costs of doing business, like jewelry or specialty goods.</p></div>
+<div class="explain"><h2>A quick example</h2><p>A $10 wholesale cost at standard keystone (2.0x) gives a $20 retail price, $10 profit per unit, and a 50% margin. At triple keystone (3.0x), the same item retails for $30, with $20 profit and a 66.7% margin.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Is keystone pricing still used today?</strong> Yes, especially in independent retail, boutique, and specialty categories — though many larger retailers and e-commerce sellers now price more dynamically based on competition and demand rather than a flat multiplier.</p><p><strong>What's the difference between margin and markup here?</strong> The multiplier here is a markup on cost (2x cost = 100% markup), while the margin shown is profit as a percentage of the retail price — a 2x multiplier (100% markup) always works out to exactly 50% margin.</p><p><strong>Should I always use the same multiplier?</strong> Not necessarily — categories with higher overhead, more returns, or longer sales cycles often need a higher multiplier than fast-moving, low-touch products to stay genuinely profitable.</p></div>
+
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/wholesale-pricing-calculator.html">Wholesale Pricing Calculator</a> · <a href="/markup-calculator.html">Markup Calculator</a> · <a href="/profit-margin-calculator.html">Profit Margin Calculator</a></p></div>
+</div>
+
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="2665011148" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+
+<script>
+document.getElementById('multiplier').addEventListener('change', function(){
+  document.getElementById('customWrap').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+
+function calcKeystone(){
+  const cost = parseFloat(document.getElementById('wholesaleCost').value) || 0;
+  const multSelect = document.getElementById('multiplier').value;
+  const mult = multSelect === 'custom' ? (parseFloat(document.getElementById('customMultiplier').value) || 0) : parseFloat(multSelect);
+
+  const retail = cost * mult;
+  const profit = retail - cost;
+  const margin = retail > 0 ? (profit / retail) * 100 : 0;
+
+  document.getElementById('rRetail').textContent = '$' + retail.toFixed(2);
+  document.getElementById('rProfit').textContent = '$' + profit.toFixed(2);
+  document.getElementById('rMargin').textContent = margin.toFixed(1) + '%';
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PayPal Fee Calculator 2026 | BizyCalc</title>
+<meta content="Free PayPal fee calculator with 2026 rates for domestic and international Goods &amp; Services payments, including the currency conversion surcharge." name="description"/>
+<link href="https://bizycalc.com/paypal-fee-calculator.html" rel="canonical"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<meta content="PayPal Fee Calculator 2026 | BizyCalc" property="og:title"/>
+<meta content="Free PayPal fee calculator with 2026 rates for domestic and international Goods &amp; Services payments, including the currency conversion surcharge." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bizycalc.com/paypal-fee-calculator.html" property="og:url"/>
+<meta content="https://bizycalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="PayPal Fee Calculator 2026 | BizyCalc" name="twitter:title"/>
+<meta content="Free PayPal fee calculator with 2026 rates for domestic and international Goods &amp; Services payments, including the currency conversion surcharge." name="twitter:description"/>
+<meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
+</head>
+<body>
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>PayPal Fee Calculator</h1>
+<p>See exactly what PayPal takes on a Goods &amp; Services payment, domestic or international, and what you'll actually receive.</p>
+</div>
+<div class="tool-box">
+<label>Payment Amount ($)</label>
+<input id="amount" placeholder="500" type="number" value="500"/>
+<label>Payment Type</label>
+<select id="payType">
+<option value="domestic">Domestic (same country, same currency)</option>
+<option value="international">International / currency conversion</option>
+</select>
+<button class="calc-btn" onclick="calcPaypal()">Calculate Fee</button>
+<div class="result" id="result">
+<div class="result-row"><span>PayPal Fee</span><strong id="rFee">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>You Receive</strong></span><strong id="rNet">$0</strong></div>
+</div>
+</div>
+<div class="explain"><h2>How this calculator works</h2><p>For Goods &amp; Services payments, PayPal charges 2.99% + $0.49 domestically. International payments jump to 4.99% + $0.49, and if the payment requires currency conversion, PayPal adds a further 3.5% on top of the exchange rate.</p></div>
+<div class="explain"><h2>Why international costs so much more</h2><p>The jump from 2.99% to 4.99% plus a 3.5% conversion markup means an international payment with currency conversion can cost 3-4x more in fees than the same domestic payment — on a $500 payment, that's roughly $15 versus $50+.</p></div>
+<div class="explain"><h2>A quick example</h2><p>A $500 international payment requiring currency conversion: 4.99% ($24.95) + $0.49 + 3.5% conversion ($17.50) = $42.94 in total fees. You'd receive $457.06 — about 8.6% gone to fees.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Does this apply to Friends &amp; Family payments?</strong> No — Friends &amp; Family payments funded by a bank account or PayPal balance are typically fee-free domestically. This calculator is for Goods &amp; Services (business) transactions, which always carry a fee.</p><p><strong>Can I avoid the currency conversion fee?</strong> Only by having a PayPal balance or bank account already in the buyer's currency, which most individual sellers don't have set up — for most people receiving international payments, the conversion fee is unavoidable through PayPal.</p><p><strong>Are there cheaper alternatives for international payments?</strong> Often yes — services like Wise are built specifically to minimize currency conversion costs and can be significantly cheaper for cross-border payments. See the payment processor comparison tool.</p></div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/stripe-fee-calculator.html">Stripe Fee Calculator</a> · <a href="/payment-processor-comparison.html">Payment Processor Comparison</a> · <a href="/freelancer-international-payment-calculator.html">Cross-Border Freelancer Payment Calculator</a></p></div>
+</div>
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcPaypal(){
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const intl = document.getElementById('payType').value === 'international';
+
+  const fee = intl ? (amount * 0.0499 + 0.49 + amount * 0.035) : (amount * 0.0299 + 0.49);
+  const net = amount - fee;
+
+  document.getElementById('rFee').textContent = '$' + fee.toFixed(2);
+  document.getElementById('rNet').textContent = '$' + net.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
