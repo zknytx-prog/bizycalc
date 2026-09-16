@@ -22,7 +22,7 @@ jobs:
           from pathlib import Path
           import re
           changed = []
-          pattern = re.compile(r'\n?<section class="expanded-info"\b.*?</section>\s*', re.S)
+          pattern = re.compile(r'\n?<section class="expanded-info".*?</section>\s*', re.S)
           for path in sorted(Path('.').glob('*.html')):
               text = path.read_text(encoding='utf-8')
               new, n = pattern.subn('\n', text)
