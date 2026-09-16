@@ -1,0 +1,73 @@
+name: One-time AdSense content quality audit
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Audit HTML content quality
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, html
+          TAG_RE = re.compile(r'<[^>]+>')
+          SCRIPT_STYLE = re.compile(r'<(script|style)\b.*?</\1>', re.I|re.S)
+          def textify(s):
+              s=SCRIPT_STYLE.sub(' ',s)
+              s=TAG_RE.sub(' ',s)
+              s=html.unescape(s)
+              return re.sub(r'\s+',' ',s).strip()
+          rows=[]
+          legal={'about.html','privacy-policy.html','terms-of-service.html','disclaimer.html'}
+          for p in sorted(Path('.').glob('*.html')):
+              s=p.read_text(encoding='utf-8')
+              txt=textify(s)
+              words=len(re.findall(r"\b[\w'’-]+\b",txt))
+              h1=len(re.findall(r'<h1\b',s,re.I))
+              ext=re.findall(r'href=["\'](https?://[^"\']+)',s,re.I)
+              has_method=bool(re.search(r'<h[23][^>]*>[^<]*(how .*work|formula|method|calculation|rates used|assumptions)',s,re.I))
+              has_example=bool(re.search(r'<h[23][^>]*>[^<]*(example|worked)',s,re.I))
+              has_faq='FAQ' in s.upper()
+              has_ads='adsbygoogle' in s
+              has_priv='/privacy-policy.html' in s
+              has_terms='/terms-of-service.html' in s
+              has_about='/about.html' in s
+              rate_sensitive=bool(re.search(r'(2026|fee|tax|vat|gst|rate|interest|duty)',txt,re.I))
+              flags=[]
+              if words<350: flags.append('LOW_WORDS')
+              if h1!=1: flags.append(f'H1={h1}')
+              if p.name not in legal and not has_method: flags.append('NO_METHOD')
+              if p.name not in legal and not has_example: flags.append('NO_EXAMPLE')
+              if p.name not in legal and not has_faq: flags.append('NO_FAQ')
+              if rate_sensitive and p.name not in legal and not ext: flags.append('RATE_NO_EXTERNAL_SOURCE')
+              if p.name in legal and has_ads: flags.append('ADS_ON_SUPPORT_PAGE')
+              if not has_priv: flags.append('NO_PRIV_LINK')
+              if not has_terms: flags.append('NO_TERMS_LINK')
+              if not has_about and p.name not in legal: flags.append('NO_ABOUT_LINK')
+              rows.append((p.name,words,len(ext),','.join(flags) or 'OK'))
+          print('PAGE\tWORDS\tEXTERNAL_LINKS\tFLAGS')
+          for r in rows: print('\t'.join(map(str,r)))
+          print('\nSUMMARY')
+          from collections import Counter
+          c=Counter()
+          for _,_,_,f in rows:
+              if f!='OK':
+                  for x in f.split(','): c[x]+=1
+          for k,v in c.most_common(): print(k,v)
+          PY
+      - name: Remove one-time audit workflow
+        run: |
+          git config user.name "BizyCalc audit bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/adsense-final-audit.yml
+          git commit -m "Remove one-time AdSense audit workflow"
+          git push origin HEAD:main
